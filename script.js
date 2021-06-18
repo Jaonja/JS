@@ -37,9 +37,14 @@ document.querySelector(".slider-prev").addEventListener("click", function () {
   rollSlider();
 });
 
-document.querySelectorAll(".bit").forEach((bit) => {
-  bit.addEventListener("click", function (event) {
-     count = event.target.dataset.class
+document.querySelectorAll(".ball").forEach((ball) => {
+    ball.addEventListener("click", function (event) {
+    count = event.target.dataset.class
+   if (this.dataset.class = count){
+      this.classList.add ('color')
+    } else  {
+        this.classList.remove ('color')
+    }
     rollSlider();
   });
 });
