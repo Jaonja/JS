@@ -63,3 +63,7 @@ cursor: pointer;
 transition: 0.3s ease;
 background-color: rgb(100, 22, 145);
 }
+
+@media (max-width: 320px) {
+    
+  }
