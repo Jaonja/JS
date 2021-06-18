@@ -1,0 +1,65 @@
+.wrapper {
+    width: 1200px;
+    margin: 30px auto;
+    background: #4592a0;
+    padding: 30px;
+}
+.slider {
+    border: 2px solid black;
+    margin: 20px auto;
+    overflow: hidden;
+    width: 921px;
+}
+
+.slider-line {
+    width: 1024px;
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: all ease 1s;
+    overflow: hidden;
+}
+
+button {
+    background: none;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: .9rem;
+}
+.bottots{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+button:hover {
+    background: orangered;
+}
+
+button:active {
+    background: #000;
+    color: #fff;
+}
+.img {
+    height: 200px;
+    width: 307px;
+    border: 1px solid cornsilk;
+    
+}
+.bit{
+display: flex;
+justify-content: center;
+}
+.ball{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(201, 22, 9);
+    border-radius: 50%;
+    margin-right: 40px;
+}
+.ball:hover{
+border: chartreuse;
+cursor: pointer;
+transition: 0.3s ease;
+background-color: rgb(100, 22, 145);
+}
