@@ -65,7 +65,15 @@ background-color: rgb(100, 22, 145);
 }
 .color{
     background-color: darkblue;
-    transition: 0.3s ease;
+    -ms-transform: translateY(5px);
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+    border-bottom: none;
+    box-shadow: none;
+    width: 30px;
+    height: 30px;
+
+
 }
 
 @media (max-width: 820px) {

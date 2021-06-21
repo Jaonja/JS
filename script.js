@@ -33,18 +33,20 @@ document.querySelector(".slider-prev").addEventListener("click", function () {
   if (count > 7) {
     count = 0;
   }
-  console.log(count);
   rollSlider();
 });
 
-document.querySelectorAll(".ball").forEach((ball) => {
-    ball.addEventListener("click", function (event) {
-    count = event.target.dataset.class
-   if (this.dataset.class = count){
-      this.classList.add ('color')
-    } else  {
-        this.classList.remove ('color')
+let balls = document.querySelectorAll(".ball");
+balls.forEach((ball) => {
+  ball.addEventListener("click", function (e) {
+    count = e.target.dataset.class;
+    for (let i = 0; i < balls.length; i++) {
+      balls[i].classList.remove("color");
     }
+    if ((this.dataset.class = count)) {
+      this.classList.add("color");
+    }
+
     rollSlider();
   });
 });
