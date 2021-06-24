@@ -1,0 +1,6 @@
+const path = require ('path')
+console.log ('Название файлы: ', path.basename(__filename))
+console.log ('имя диркетриии', path.dirname(__filename))
+console.log ('Расширения файла', path.extname(__filename))
+console.log ('Parse', path.parse(__filename).name)
+console.log (path.join(__dirname, 'server', 'index.html'))
