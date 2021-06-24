@@ -293,4 +293,7 @@ body {
     .wrapper{
         width: 100%;
     }
+    .slider{
+        width: auto;
+    }
   }
