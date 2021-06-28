@@ -4,35 +4,24 @@ let box = document.createElement("div");
 let boxWidth;
 start.addEventListener("click", startGame);
 let boxSize = getRandom(30, 30);
-boxWidth = box.offsetWidth;
+ console.log (box.offsetWidth)
+console.log (boxWidth)
 box.classList.add("bal");
 
-function ping() {
-  box.style.left += "30px";
-}
-function ping1() {
-  box.style.right += "30px";
-}
-function ping2() {
-  box.style.top  += "30px";
-}
-function ping3() {
-  box.style.rbottom += "30px";
-}
+
 
 document.addEventListener("keydown", function (event) {
   if (event.keyCode == 39) {
-    ping();
+    box.style.left += "30px";
   }
   if (event.keyCode == 37) {
-    ping1();
-    console.log("click");
-  }
-  if (event.keyCode == 40) {
-    ping2();
+    box.style.right += "30px";
   }
   if (event.keyCode == 38) {
-    ping3();
+    box.style.top  += "30px";
+  }
+  if (event.keyCode == 40) {
+    box.style.bottom += "30px";
   }
 });
 
