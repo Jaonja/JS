@@ -50,5 +50,3 @@ document.querySelector(".slider-next").addEventListener("click", function () {
     }
     rollSlider();
   });
-
-

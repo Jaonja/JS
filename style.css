@@ -288,6 +288,30 @@ body {
 .calc__btn:nth-of-type(17):hover {
    background-color: red;
 }
+.game-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.game {
+    width: 400px;
+    height: 400px;
+    background-color: darkgray;
+    border: 5px solid;
+    position: relative;
+    
+}
+.start{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.none{
+    display: none;
+}
+color {
+    background-color: #fff;
+}
 
 @media (max-width: 820px) {
     .wrapper{
