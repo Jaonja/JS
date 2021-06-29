@@ -30,23 +30,23 @@ balls.forEach((ball) => {
 });
 
 document.querySelector(".slider-next").addEventListener("click", function () {
-    count++;
-    if (count >= images.length) {
-      count = 0;
-    }
-    if (count === 7) {
-      count = 0;
-    }
-    rollSlider();
-  });
-  
-  document.querySelector(".slider-prev").addEventListener("click", function () {
-    count--;
-    if (count < 0) {
-      count = images.length - 1;
-    }
-    if (count > 7) {
-      count = 0;
-    }
-    rollSlider();
-  });
+  count++;
+  if (count >= images.length) {
+    count = 0;
+  }
+  if (count === 7) {
+    count = 0;
+  }
+  rollSlider();
+});
+
+document.querySelector(".slider-prev").addEventListener("click", function () {
+  count--;
+  if (count < 0) {
+    count = images.length - 1;
+  }
+  if (count > 7) {
+    count = 0;
+  }
+  rollSlider();
+});
