@@ -2,26 +2,46 @@ let start = document.querySelector("#start");
 let game = document.querySelector("#game");
 let box = document.createElement("div");
 let boxWidth;
+let position = {
+    top: 0,
+    left: 0,
+};
 start.addEventListener("click", startGame);
 let boxSize = getRandom(30, 30);
- console.log (box.offsetWidth)
-console.log (boxWidth)
+boxWidth = box.offsetWidth;
 box.classList.add("bal");
 
-
+function pick() {
+    position.left += 30
+    box.style.left = String(position.left) + 'px';
+}
+function pick1() {
+    position.left -= 30
+    box.style.left = String(position.left) + 'px';
+  
+}
+function pick2() {
+    position.top -= 30
+    box.style.top = String(position.top) + 'px';
+}
+function pick3() {
+    position.top += 30
+    box.style.top = String(position.top) + 'px';
+}
 
 document.addEventListener("keydown", function (event) {
-  if (event.keyCode == 39) {
-    box.style.left += "30px";
+  if (event.keyCode == 68) {
+    pick();
   }
-  if (event.keyCode == 37) {
-    box.style.right += "30px";
+  if (event.keyCode == 65) {
+    pick1();
+    console.log("click");
   }
-  if (event.keyCode == 38) {
-    box.style.top  += "30px";
+  if (event.keyCode == 87) {
+    pick2();
   }
-  if (event.keyCode == 40) {
-    box.style.bottom += "30px";
+  if (event.keyCode == 83) {
+    pick3();
   }
 });
 
