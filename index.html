@@ -73,14 +73,24 @@
       </div>
     </div>
     <div class="game-wrapper">
-      <div class="game" id="game">
-        <div class="start-game">
-          <button class="start" id="start">Начать</button>
-        </div>
+      <div class="menu">
+        <canvas></canvas>
+        <ul>
+          <li><label>Ширина </label><input id=width type="text"/></li>
+          <li><label>Высота</label><input id=height type="text"/></li>
+          <li><label>ширина пути:</label><input id=pathwidth type="text"/></li>
+          <li><label>Ширина стены:</label><input id=wallwidth type="text"/></li>
+          <li><label>Внешняя ширина:</label><input id=outerwidth type="text"/></li>
+          <li><label>Цвет пути:</label><input id=pathcolor type="text"/></li>
+          <li><label>Цвет фона:</label><input id=wallcolor type="text"/></li>
+          <li><label>Скорость:</label><input id=seed type="text"/></li>
+          <li><input id=randomseed type="button" value="Новая игра"/></li>
+        </ul>
       </div>
     </div>
     <script src="script.js"></script>
     <script src="calck.js"></script>
     <script src="laberint.js"></script>
+    <script src="TEST.JS"></script>
   </body>
 </html>
