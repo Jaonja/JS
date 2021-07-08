@@ -8,8 +8,8 @@ delay = 1
 x = width/2|0
 y = height/2|0
 seed = Math.random()*100000|0
-wallColor = '#000000'
-pathColor = '#808080'
+wallColor = 'blue'
+pathColor = 'yellow'
 
 // texts
 
