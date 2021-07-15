@@ -1,29 +1,23 @@
 {
   "name": "js",
   "version": "1.0.0",
-  "description": "node js",
-  "main": "script.js",
+  "description": "jaros maxim",
+  "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jaonja/JS.git"
   },
-  "keywords": [
-    "node",
-    "nodeJS"
-  ],
-  "author": "Jaros Maxim",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Jaonja/JS/issues"
   },
   "homepage": "https://github.com/Jaonja/JS#readme",
-  "dependencies": {
-    "chalk": "^4.1.1"
-  },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "svg-inline-loader": "^0.8.2"
   }
 }

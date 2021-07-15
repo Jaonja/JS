@@ -96,12 +96,13 @@ loop = function () {
   y = route[route.length - 1][1] | 0;
 
   let directions = [
-      [1, 0],
-      [-1, 0],
-      [0, 1],
-      [0, -1],
+      [2, 0],
+      [-2, 0],
+      [0, 2],
+      [0, -2],
     ],
     alternatives = [];
+    console.log (directions)
 
   for (let i = 0; i < directions.length; i++) {
     if (map[(directions[i][1] + y) * 2] != undefined && map[(directions[i][1] + y) * 2][(directions[i][0] + x) * 2] === false) {
