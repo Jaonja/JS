@@ -1,0 +1,24 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "jaros maxim",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development ",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaonja/JS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaonja/JS/issues"
+  },
+  "homepage": "https://github.com/Jaonja/JS#readme",
+  "devDependencies": {
+    "svg-inline-loader": "^0.8.2"
+  }
+}
