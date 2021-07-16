@@ -1,5 +1,6 @@
 pathWidth = 10;
 wall = 2;
+
 outerWall = 2;
 width = 50;
 height = 50;
