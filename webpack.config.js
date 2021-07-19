@@ -1,56 +1,42 @@
-const path = require('path')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const ghpages = require('gh-pages')
-
-ghpages.publish('dist', function(err) {});
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    context: path.resolve(__dirname, 'src'),
-    mode: 'development',
-    entry: ['@babel/polyfill','./index.js'],
-    output: {
-        filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, 'dist')
-    },
-    plugins: [
-        new HTMLWebpackPlugin({
-            template: './index.html'
-        }),
-        new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css'
-        })
+  entry: {
+    main: path.resolve(__dirname, "./src/js/index.js"),
+  },
+  output: {
+    path: path.resolve(__dirname, "./dist"),
+    filename: "bundle.js",
+  },
+  mode: "development",
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "./src/index.html"),
+      filename: "index.html",
+    }),
+    new MiniCssExtractPlugin(),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      {
+        test: /\.(sass|scss)$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
+      },
+      {
+        test: /.(?:ico|gif|png|jpg|jpeg|svg)$/i,
+        use: ["file-loader?name=assets/[folder]/[name].[ext]"],
+      },
     ],
-    module: {
-        rules: [
-            {
-                test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader']
-            },
-            {
-                test: /\.s[ac]ss$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
-            },
-            {
-                test: /.(?:ico|gif|png|jpg|jpeg|svg)$/i,
-                use: ["file-loader?name=assets/[folder]/[name].[ext]"],
-            },
-            {
-                test: /\.m?js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
-            },
-            {
-                test: /\.mp3$/,
-                loader: 'file-loader'
-            }
-        ]
-    }
-}
+  },
+};
