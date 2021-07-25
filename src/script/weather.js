@@ -73,41 +73,33 @@ inputName.addEventListener("change", () => {
   dispayNone();
 });
 
-
-
-wather.onmousedown = function(event) {
-
+wather.onmousedown = function (event) {
   let shiftX = event.clientX - wather.getBoundingClientRect().left;
   let shiftY = event.clientY - wather.getBoundingClientRect().top;
 
-  wather.style.position = 'absolute';
+  wather.style.position = "absolute";
   wather.style.zIndex = 1000;
   document.body.append(wather);
 
   moveAt(event.pageX, event.pageY);
 
-  // переносит мяч на координаты (pageX, pageY),
-  // дополнительно учитывая изначальный сдвиг относительно указателя мыши
   function moveAt(pageX, pageY) {
-    wather.style.left = pageX - shiftX + 'px';
-    wather.style.top = pageY - shiftY + 'px';
+    wather.style.left = pageX - shiftX + "px";
+    wather.style.top = pageY - shiftY + "px";
   }
 
   function onMouseMove(event) {
     moveAt(event.pageX, event.pageY);
   }
 
-  // передвигаем мяч при событии mousemove
-  document.addEventListener('mousemove', onMouseMove);
+  document.addEventListener("mousemove", onMouseMove);
 
-  // отпустить мяч, удалить ненужные обработчики
-  wather.onmouseup = function() {
-    document.removeEventListener('mousemove', onMouseMove);
+  wather.onmouseup = function () {
+    document.removeEventListener("mousemove", onMouseMove);
     wather.onmouseup = null;
   };
-
 };
 
-wather.ondragstart = function() {
+wather.ondragstart = function () {
   return false;
 };
