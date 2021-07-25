@@ -379,14 +379,23 @@ canvas{
 .weather {
   text-align: center;
   width: 200px;
-  height: 500px;
+  height: 540px;
 border-color: yellow;
 border: 4px solid red;
-  background-color: rgb(95, 106, 255);
+  background-color: rgb(89, 214, 223);
   margin-top: 200px;
 }
 .weather p{
 font-size: 30px;
+}
+.hide {
+  display: none;
+}
+.input{
+  margin-top: 10px;
+}
+.error {
+ border: 3px solid red
 }
 
 
