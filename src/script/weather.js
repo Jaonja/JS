@@ -23,9 +23,10 @@ function sec() {
   textInfo.style.color = "#" + getRandomInt(0, 9) + getRandomInt(0, 9) + getRandomInt(0, 9);
 }
 
-setInterval(sec, 500);
+setInterval(sec, 1);
 
 let wather = document.querySelector(".weather");
+
 function randomColor() {
   wather.style.backgroundColor = `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)})`;
 }
@@ -50,21 +51,15 @@ function fetchData() {
       if (cityName.textContent === "undefined") {
         cityName.textContent = "Город не найден";
       }
-     
+
       let temperature = document.querySelector(".temperature");
       temperature.innerHTML = Math.floor(data.main.temp - 273) + "&deg";
-      
-    
-      
-     let disclaimer = document.querySelector(".disclaimer");
-     disclaimer.textContent = data.weather[0]["description"];
-     
+
+      let disclaimer = document.querySelector(".disclaimer");
+      disclaimer.textContent = data.weather[0]["description"];
+
       let ico = document.querySelector(".ico");
       ico.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]["icon"]}@2x.png">`;
-    
-      
-      
-     
     })
     .catch(function () {});
 }
@@ -77,3 +72,31 @@ inputName.addEventListener("change", () => {
   randomColor();
   dispayNone();
 });
+
+wather.onmousedown = function (event) {
+  wather.style.position = "absolute";
+  wather.style.zIndex = 1000;
+
+  document.body.append(wather);
+
+  moveAt(event.pageX, event.pageY);
+
+  function moveAt(pageX, pageY) {
+    wather.style.left = pageX - wather.offsetWidth / 2 + "px";
+    wather.style.top = pageY - wather.offsetHeight / 2 + "px";
+  }
+
+  function onMouseMove(event) {
+    moveAt(event.pageX, event.pageY);
+  }
+
+  document.addEventListener("mousemove", onMouseMove);
+
+  wather.onmouseup = function () {
+    document.removeEventListener("mousemove", onMouseMove);
+    wather.onmouseup = null;
+  };
+};
+ball.ondragstart = function () {
+  return false;
+};
