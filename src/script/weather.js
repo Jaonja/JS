@@ -37,32 +37,43 @@ function getRandom(min, max) {
 function valueGet() {
   city = inputName.value;
 }
-function eror() {
-  if ((city.value = undefined)) {
-    city.value === "l;k";
-  }
-}
 
 let apiKey = "6c273cbb2593e6efce1a4c12e3db2db5";
 function fetchData() {
   fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&appid=${apiKey}`)
     .then(function (resp) {
       return resp.json();
-     
     })
     .then(function (data) {
-      let cityName = document.querySelector(".City").innerHTML = data.name;
-      let temperature = (document.querySelector(".temperature").innerHTML = Math.floor(data.main.temp - 273) + "&deg");
-      let disclaimer = (document.querySelector(".disclaimer").textContent = data.weather[0]["description"]);
-      let ico = (document.querySelector(".ico").innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]["icon"]}@2x.png">`);
+      let cityName = document.querySelector(".City");
+      cityName.innerHTML = data.name;
+      if (cityName.textContent === "undefined") {
+        cityName.textContent = "Город не найден";
+      }
+     
+      let temperature = document.querySelector(".temperature");
+      temperature.innerHTML = Math.floor(data.main.temp - 273) + "&deg";
+      
+    
+      
+     let disclaimer = document.querySelector(".disclaimer");
+     disclaimer.textContent = data.weather[0]["description"];
+     
+      let ico = document.querySelector(".ico");
+      ico.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]["icon"]}@2x.png">`;
+    
+      
+      
+     
     })
     .catch(function () {});
+}
+function pDispayNone() {
+  if (cityName.textContent === "undefined") temperature.classList.add("hide");
 }
 inputName.addEventListener("change", () => {
   valueGet();
   fetchData();
-  eror();
   randomColor();
   dispayNone();
-  
 });
