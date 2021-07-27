@@ -103,7 +103,7 @@ loop = function () {
       [0, -2],
     ],
     alternatives = [];
-    console.log (directions)
+
 
   for (let i = 0; i < directions.length; i++) {
     if (map[(directions[i][1] + y) * 2] != undefined && map[(directions[i][1] + y) * 2][(directions[i][0] + x) * 2] === false) {
